@@ -1,0 +1,26 @@
+$block: "rectangle";
+
+.#{$block} {
+  &_a {
+    @apply transition-transform duration-300 ease-in-out;
+
+    &.active {
+      @apply transform translate-x-[4px] translate-y-[1px] rotate-45;
+    }
+  }
+  &_b {
+    @apply opacity-100 visible transition-all duration-300 ease-in-out;
+
+    &.active {
+      @apply opacity-0 invisible;
+    }
+  }
+  &_c {
+    @apply transition-transform duration-300 ease-in-out;
+
+    &.active {
+
+      @apply transform translate-x-[-8px] translate-y-[5px] rotate-[-45deg]; 
+    }
+  }
+}

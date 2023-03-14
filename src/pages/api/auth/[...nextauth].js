@@ -3,7 +3,6 @@ import CredentialProvider from "next-auth/providers/credentials";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import GitHubProvider from "next-auth/providers/github";
 import prisma from "../../../../prisma/client";
-import { redirect } from "next/dist/server/api-utils";
 
 export default NextAuth({
   session: {
@@ -11,6 +10,7 @@ export default NextAuth({
     maxAge: 3000
   },
   adapter: PrismaAdapter(prisma),
+  secret: process.env.NEXTAUTH_SECRET,
   providers: [
     CredentialProvider({
       name: "Credentials",

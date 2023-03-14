@@ -1,0 +1,24 @@
+$block: "navbar";
+
+.#{$block} {
+  &__container {
+    @apply h-[72px] flex items-center justify-between px-6 py-4;
+
+    background: radial-gradient(
+      128.88% 128.88% at 103.9% -10.39%,
+      #e84d70 0%,
+      #a337f6 53.09%,
+      #28a7ed 100%
+    );
+    h1 {
+      @apply flex flex-col;
+
+      span:first-child {
+        @apply text-base font-bold text-white;
+      }
+      span:last-child {
+        @apply text-sm font-bold text-white;
+      }
+    }
+  }
+}

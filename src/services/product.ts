@@ -7,4 +7,9 @@ export class Product {
     const { data } = await axios.get("/api/products");
     return data;
   };
+
+  updateProduct = async (id: string) => {
+    const { data } = await axios.put(`/api/products/${id}`);
+    return data;
+  };
 }

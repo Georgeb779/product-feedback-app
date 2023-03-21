@@ -19,7 +19,8 @@ module.exports = {
         "deep-orange": "#f49f85",
         "sky-blue": "#AD1FEA",
         "steel-blue": "#647196",
-        "bright-blue": "#62bcfa"
+        "bright-blue": "#62bcfa",
+        "dark-blue": "#3a4374"
       }
     }
   },

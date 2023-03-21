@@ -55,6 +55,7 @@ model User {
   replies       Reply[]
   accounts      Account[]
   sessions      Session[]
+  Upvotes       Upvotes[]
 
   @@map("users")
 }
@@ -68,15 +69,19 @@ model VerificationToken {
 }
 
 model ProductRequest {
-  id          String    @id @default(cuid())
-  title       String
-  category    String
-  upvotes     Int
-  status      String
-  description String
-  user        User      @relation(fields: [user_id], references: [id])
-  user_id     String
-  comments    Comment[]
+  id             String    @id @default(cuid())
+  title          String
+  category       String
+  upvotes        Int
+  status         String
+  description    String
+  user           User      @relation(fields: [user_id], references: [id])
+  user_id        String
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @default(now()) @updatedAt
+  comments_count Int?      @default(0)
+  Comment        Comment[]
+  Upvotes        Upvotes[]
 
   @@map("product_requests")
 }
@@ -87,7 +92,7 @@ model Comment {
   user               User            @relation(fields: [user_id], references: [id])
   user_id            String
   product_request    ProductRequest? @relation(fields: [product_request_id], references: [id])
-  product_request_id String?
+  product_request_id String
   replies            Reply[]
 
   @@map("comments")
@@ -102,4 +107,15 @@ model Reply {
   comment_id Int
 
   @@map("replies")
+}
+
+model Upvotes {
+  id                 String         @id @default(cuid())
+  user               User           @relation(fields: [user_id], references: [id])
+  user_id            String         @map("user_id")
+  product_request    ProductRequest @relation(fields: [product_request_id], references: [id])
+  product_request_id String
+
+  @@unique([user_id, product_request_id])
+  @@map("upvotes")
 }

@@ -1,0 +1,35 @@
+$block: "product_card";
+
+.#{$block} {
+  &__container {
+    @apply flex flex-col max-w-[327px] min-h-[200px] justify-between  bg-white rounded-[10px] px-6 py-6 shadow-md;
+
+    h2 {
+      @apply font-bold text-[13px]  text-dark-blue mb-[9px];
+      line-height: 19px;
+      letter-spacing: -0.180556px;
+    }
+
+    p {
+      @apply text-[13px]  text-steel-blue font-normal;
+      line-height: 19px;
+    }
+  }
+
+  &_tag__container {
+    @apply bg-light-blue mt-2 mb-4 font-semibold rounded-[10px] w-fit px-4 py-[5px] flex items-center text-[13px] text-primary-blue;
+  }
+
+  &_feedback__container {
+    @apply flex items-center justify-between;
+  }
+
+  &_vote__container {
+    @apply flex items-center justify-center gap-[10px] bg-light-blue  px-4 py-[6px] rounded-[10px] text-[13px] text-dark-blue font-bold;
+ 
+  }
+
+  &_comment__container {
+    @apply flex items-center gap-1 text-[13px] text-dark-blue font-bold;
+  }
+}

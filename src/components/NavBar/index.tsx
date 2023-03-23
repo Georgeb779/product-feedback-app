@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useQuery, useQueryClient } from "react-query";
 import { Product } from "@/services";
 import { BurgerMenu } from "@/assets/icons";
@@ -6,6 +6,7 @@ import { BurgerMenu } from "@/assets/icons";
 import style from "./NavBar.module.scss";
 import { SideBar } from "..";
 import { countStatus } from "@/utils/countStatus";
+import { handleOpenSideBard } from "@/utils";
 
 export const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,18 +18,23 @@ export const NavBar = () => {
     product.getProducts
   );
 
-  if (isLoading) return "Loading...";
+  if (isLoading) return <>Loading...</>;
 
   // if (error) return "An error has occurred: " + error.message;
 
   return (
-    <div>
+    <>
       <header className={style.navbar__container}>
         <h1>
           <span>Frontend Mentor</span>
           <span>Feedback Board</span>
         </h1>
-        <button onClick={() => setIsOpen(!isOpen)} type='button'>
+        <button
+          onClick={() => {
+            handleOpenSideBard(isOpen, setIsOpen);
+          }}
+          type='button'
+        >
           <BurgerMenu isOpen={isOpen} />
         </button>
       </header>
@@ -37,6 +43,6 @@ export const NavBar = () => {
         setIsOpen={setIsOpen}
         statusCount={data && countStatus(data)}
       />
-    </div>
+    </>
   );
 };

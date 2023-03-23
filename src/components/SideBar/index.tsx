@@ -1,3 +1,4 @@
+import { handleOpenSideBard } from "@/utils";
 import Link from "next/link";
 import React from "react";
 import style from "./SideBar.module.scss";
@@ -11,15 +12,16 @@ export const SideBar = ({
   setIsOpen: (isOpen: boolean) => void;
   statusCount: { value: string; count: number }[];
 }) => {
-  
   const listOfCategory = ["All", "UI", "UX", "Enhancement", "Bug", "Feature"];
 
   return (
     <aside
-      className={`${style.sidebar__container} ${isOpen ? style.active : ""}`}
+      className={`${style.sidebar__container} ${
+        isOpen ? `${style.active} modal-open` : ""
+      }`}
       onClick={(e) => {
         if (e.target === e.currentTarget) {
-          setIsOpen(false);
+          handleOpenSideBard(isOpen, setIsOpen);
         }
       }}
     >

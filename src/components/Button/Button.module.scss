@@ -1,0 +1,7 @@
+$block: "btn";
+
+.#{$block} {
+  &.primary {
+    @apply flex items-center justify-center w-[134px] h-[40px] text-white rounded-[10px] bg-sky-blue text-xs font-bold;
+  }
+}

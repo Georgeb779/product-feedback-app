@@ -1,18 +1,17 @@
 import React from "react";
 import { signIn } from "next-auth/react";
 
-import { signOut, useSession } from "next-auth/react";
+// import { signOut, useSession } from "next-auth/react";
+import { DropDown, NavBar, DashBoardSuggestions } from "@/components";
+import { ToastContainer } from "react-toastify";
 
 export default function Home() {
-  const { data: session } = useSession();
   return (
     <>
-      {session && session.user && session.user.name && (
-        <div>
-          {session.user && session.user.name}
-          <button onClick={() => signOut()}>Sign out</button>
-        </div>
-      )}
+      <NavBar />
+      <DropDown />
+      <DashBoardSuggestions />
+      <ToastContainer position='top-right' autoClose={2500} />
     </>
   );
 }

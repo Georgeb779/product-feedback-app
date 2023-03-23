@@ -2,3 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  height: 100%;
+}
+body,
+#__next {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+body.modal-open {
+  overflow: hidden !important;
+}
+
+#__next {
+  // min-height: 100%;
+  @apply bg-off-white;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: transparent;
+}

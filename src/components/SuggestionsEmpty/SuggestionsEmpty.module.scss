@@ -1,0 +1,21 @@
+$block: "suggestions_empty";
+
+.#{$block} {
+  &__container {
+    @apply flex flex-col items-center justify-center w-full h-[460px] text-center bg-white rounded-[10px] px-6 py-6;
+    svg {
+      @apply mb-[35px];
+    }
+
+    h2 {
+      @apply font-bold text-lg text-center text-dark-blue mb-[14px];
+      line-height: 26px;
+      letter-spacing: -0.25px;
+    }
+
+    p {
+      @apply text-[13px] text-center text-steel-blue mb-[24px];
+      line-height: 19px;
+    }
+  }
+}

@@ -1,11 +1,21 @@
 $block: "sidebar";
 
+body.#{$block},
+html.#{$block} {
+  &__container {
+    &.active {
+      overflow: hidden !important;
+    }
+  }
+}
+
 .#{$block} {
   &__container {
     @apply opacity-0 invisible transition-all duration-300 ease-in-out;
 
     &.active {
-      @apply opacity-100 visible flex absolute h-full w-full right-0;
+      @apply opacity-100 visible flex absolute  w-full right-0;
+      height: -webkit-fill-available;
       background: rgba(0, 0, 0, 0.5);
     }
 
@@ -56,7 +66,8 @@ $block: "sidebar";
     }
   }
   &_content__container {
-    @apply opacity-0 invisible flex flex-col bg-off-white right-0 p-6 gap-6 h-full w-[271px] absolute transition-all duration-300 ease-in-out;
+    @apply opacity-0 invisible flex flex-col bg-off-white right-0 p-6 gap-6  w-[271px] absolute transition-all duration-300 ease-in-out;
+    height: -webkit-fill-available;
 
     &.active {
       @apply opacity-100 visible;

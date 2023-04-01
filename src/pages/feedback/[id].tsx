@@ -1,7 +1,7 @@
 import { Product } from "@/services";
 import { useQuery } from "react-query";
 import { useRouter } from "next/router";
-import { Button, CommentSection, ProductCard } from "@/components";
+import { AddComment, Button, CommentSection, ProductCard } from "@/components";
 import style from "./feedback.module.scss";
 import { GoBackArrow } from "@/assets/icons";
 
@@ -48,7 +48,7 @@ function ProductPage() {
           />
         </nav>
       </header>
-      <section>
+      <section className={style.product_feedback__comment_section}>
         <ProductCard
           id={data.id}
           title={data.title}
@@ -58,9 +58,9 @@ function ProductPage() {
           comments={data.Comment}
         />
       </section>
-
       <div className={style.product_feedback_comment__container}>
         <CommentSection id={data.id} />
+        <AddComment />
       </div>
     </main>
   );

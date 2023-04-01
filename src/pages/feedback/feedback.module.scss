@@ -5,9 +5,9 @@ $block: "product_feedback";
     nav {
       @apply flex px-6 justify-between w-full my-6 h-10 items-center;
     }
-    section {
-      @apply flex flex-col items-center justify-center w-full;
-    }
+  }
+  &__comment_section {
+    @apply flex flex-col items-center justify-center w-full;
   }
 
   &_comment__container {

@@ -6,7 +6,15 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method === "GET") {
-    const products = await prisma.productRequest.findMany();
+    const products = await prisma.productRequest.findMany({
+      include: {
+        Comment: {
+          include: {
+            replies: true
+          }
+        }
+      }
+    });
     const suggestions = products.filter(
       (product) => product.status === "suggestion"
     );

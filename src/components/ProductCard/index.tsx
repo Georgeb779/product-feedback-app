@@ -4,6 +4,8 @@ import { useSession } from "next-auth/react";
 import { Arrow, CommentIcon } from "@/assets/icons";
 import { UpVote } from "@/utils/upVote";
 import { ProductCardInterface } from "@/interfaces";
+import Link from "next/link";
+import { countCommentAndReplies } from "@/utils";
 
 export const ProductCard = ({
   id,
@@ -11,7 +13,8 @@ export const ProductCard = ({
   description,
   category,
   upVotes,
-  commentsCount
+  comments,
+  urlIsActive = false
 }: ProductCardInterface) => {
   const { data: session } = useSession();
 
@@ -20,8 +23,17 @@ export const ProductCard = ({
   const mutation = UpVote(session?.user?.id, id, title, setDisableVote);
 
   return (
-    <div className={style.product_card__container}>
-      <h2>{title}</h2>
+    <div
+      className={style.product_card__container}
+      onClick={(e) => {
+        if (e.target === e.currentTarget) {
+          console.log("click");
+        }
+      }}
+    >
+      <h2>
+        {urlIsActive ? <Link href={`/feedback/${id}`}>{title}</Link> : title}
+      </h2>
       <p>{description}</p>
       <span className={style.product_card_tag__container}>{category}</span>
       <div className={style.product_card_feedback__container}>
@@ -41,7 +53,7 @@ export const ProductCard = ({
           <i>
             <CommentIcon />
           </i>
-          {commentsCount}
+          {countCommentAndReplies(comments)}
         </span>
       </div>
     </div>

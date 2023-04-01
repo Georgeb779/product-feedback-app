@@ -2,7 +2,7 @@ $block: "product_card";
 
 .#{$block} {
   &__container {
-    @apply flex flex-col max-w-[327px] min-h-[200px] justify-between  bg-white rounded-[10px] px-6 py-6 shadow-md;
+    @apply flex flex-col cursor-default max-w-[327px] min-h-[200px] justify-between  bg-white rounded-[10px] px-6 py-6 shadow-md;
 
     h2 {
       @apply font-bold text-[13px]  text-dark-blue mb-[9px];
@@ -25,8 +25,7 @@ $block: "product_card";
   }
 
   &_vote__container {
-    @apply flex items-center justify-center gap-[10px] bg-light-blue  px-4 py-[6px] rounded-[10px] text-[13px] text-dark-blue font-bold;
- 
+    @apply cursor-pointer flex items-center justify-center gap-[10px] bg-light-blue  px-4 py-[6px] rounded-[10px] text-[13px] text-dark-blue font-bold;
   }
 
   &_comment__container {

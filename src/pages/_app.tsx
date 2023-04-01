@@ -5,6 +5,7 @@ import React, { ReactNode } from "react";
 import { Session } from "next-auth";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
+import { ToastContainer } from "react-toastify";
 
 interface AppPropsWithSession extends AppProps {
   pageProps: {
@@ -29,6 +30,7 @@ export default function App({ Component, pageProps }: AppPropsWithSession) {
         )}
       </SessionProvider>
       <ReactQueryDevtools initialIsOpen={false} />
+      <ToastContainer position='top-right' autoClose={2500} />
     </QueryClientProvider>
   );
 }

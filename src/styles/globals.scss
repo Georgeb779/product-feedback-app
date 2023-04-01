@@ -1,10 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;600&family=Plus+Jakarta+Sans:ital,wght@0,200;0,400;0,700;1,200;1,600&display=swap");
 
 html {
   height: 100%;
+  font-family: "Jost", sans-serif;
 }
+  
 body,
 #__next {
   position: absolute;

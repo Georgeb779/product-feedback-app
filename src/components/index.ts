@@ -8,3 +8,4 @@ export * from "./ProductCard";
 // export * from "./ProductCardSkeleton";
 export * from "./CommentSection";
 export * from "./CommentItem";
+export * from "./AddComment";

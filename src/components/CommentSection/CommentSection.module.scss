@@ -1,0 +1,11 @@
+$block: "comment_section";
+
+.#{$block} {
+  &__container {
+    @apply flex flex-col items-center bg-white w-[327px] p-6 rounded-[10px] shadow-sm;
+
+    h2 {
+      @apply text-[18px] text-dark-blue font-bold self-start;
+    }
+  }
+}

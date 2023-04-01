@@ -22,17 +22,28 @@ export const CommentSection = ({ id }: { id: string }) => {
       <h2>{data && countCommentAndReplies(data)} Comments</h2>
       <ul>
         {data &&
-          data.map((comment) => (
-            <li key={comment.id}>
-              <CommentItem
-                image={comment.user.image}
-                name={comment.user.name}
-                username={comment.user.username}
-                content={comment.content}
-                replies={comment.replies}
-              />
-            </li>
-          ))}
+          data.map(
+            (comment: {
+              id: string;
+              user: {
+                image: string;
+                name: string;
+                username: string;
+              };
+              content: string;
+              replies: any[];
+            }) => (
+              <li key={comment.id}>
+                <CommentItem
+                  image={comment.user.image}
+                  name={comment.user.name}
+                  username={comment.user.username}
+                  content={comment.content}
+                  replies={comment.replies}
+                />
+              </li>
+            )
+          )}
       </ul>
     </div>
   );

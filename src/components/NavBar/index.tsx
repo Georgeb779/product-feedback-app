@@ -18,10 +18,6 @@ export const NavBar = () => {
     product.getProducts
   );
 
-  if (isLoading) return <>Loading...</>;
-
-  // if (error) return "An error has occurred: " + error.message;
-
   return (
     <>
       <header className={style.navbar__container}>

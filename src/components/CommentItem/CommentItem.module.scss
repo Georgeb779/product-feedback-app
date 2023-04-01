@@ -1,0 +1,61 @@
+$block: "comment_item";
+
+.#{$block} {
+  &__container {
+    @apply w-[327px] bg-white px-6 pt-6;
+
+    header {
+      @apply flex  h-[40px] items-center justify-between gap-4;
+
+      button {
+        @apply text-[13px] text-primary-blue font-bold;
+      }
+
+      h2 {
+        @apply text-[13px] text-dark-blue font-bold;
+      }
+
+      p {
+        @apply text-[13px] text-steel-blue;
+      }
+
+      div {
+        @apply mr-auto;
+      }
+
+      img {
+        @apply w-10 h-10 rounded-full;
+      }
+    }
+  }
+
+  &_content__container {
+    p {
+      @apply min-h-[95px] text-[13px] mt-4 text-steel-blue;
+      span {
+        @apply text-sky-blue font-bold;
+      }
+    }
+  }
+  &_reply__container {
+    @apply items-center pt-6 w-[256px];
+
+    article {
+      @apply w-[280px] bg-white pl-6;
+    }
+    li {
+      &::before {
+        content: "";
+        border-left: 1px solid #e5e5e5;
+        @apply h-[155px] block absolute;
+      }
+    }
+    li:last-child {
+      &::before {
+        content: "";
+        border-left: 1px solid #e5e5e5;
+        @apply h-[25px] block absolute;
+      }
+    }
+  }
+}

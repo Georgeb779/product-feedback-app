@@ -3,15 +3,14 @@ import { signIn } from "next-auth/react";
 
 // import { signOut, useSession } from "next-auth/react";
 import { DropDown, NavBar, DashBoardSuggestions } from "@/components";
-import { ToastContainer } from "react-toastify";
+import { Navigation } from "@/layout/Navigation";
 
 export default function Home() {
   return (
     <>
-      <NavBar />
-      <DropDown />
-      <DashBoardSuggestions />
-      <ToastContainer position='top-right' autoClose={2500} />
+      <Navigation>
+        <DashBoardSuggestions />
+      </Navigation>
     </>
   );
 }

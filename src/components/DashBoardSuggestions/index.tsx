@@ -11,7 +11,7 @@ export const DashBoardSuggestions = () => {
     "Get Suggestions",
     suggestions.getSuggestions
   );
-
+  
   return (
     <>
       {isLoading ? (
@@ -34,7 +34,7 @@ export const DashBoardSuggestions = () => {
                     description: string;
                     category: string;
                     upvotes: number;
-                    comments_count: number;
+                    Comment: any;
                   }) => (
                     <ProductCard
                       key={item.id}
@@ -43,7 +43,8 @@ export const DashBoardSuggestions = () => {
                       description={item.description}
                       category={item.category}
                       upVotes={item.upvotes}
-                      commentsCount={item.comments_count}
+                      comments={item.Comment}
+                      urlIsActive={true}
                     />
                   )
                 )}

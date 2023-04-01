@@ -1,0 +1,30 @@
+$block: "add_comment";
+
+.#{$block} {
+  &__container {
+    @apply flex flex-col w-[327px] bg-white mt-6 rounded-[10px] mb-20 shadow-sm;
+
+    h2 {
+      @apply text-dark-blue font-bold text-[18px] p-6;
+    }
+
+    textarea {
+      @apply resize-none w-[279px] h-[80px] bg-off-white rounded-[10px] p-4;
+      &::placeholder {
+        @apply text-shade-blue text-[13px];
+      }
+    }
+  }
+
+  &__textarea_container {
+    @apply flex flex-col items-center;
+  }
+
+  &__submit_container {
+    @apply flex justify-between items-center w-[279px] h-10 my-4;
+
+    span {
+      @apply text-shade-blue text-[13px];
+    }
+  }
+}

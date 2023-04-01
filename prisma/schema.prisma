@@ -52,10 +52,11 @@ model User {
   updatedAt     DateTime         @updatedAt
   requests      ProductRequest[]
   comments      Comment[]
-  replies       Reply[]
   accounts      Account[]
   sessions      Session[]
   Upvotes       Upvotes[]
+  replayTo      Reply[]          @relation("RepliedToUser")
+  replyUser     Reply[]          @relation("UserReplying")
 
   @@map("users")
 }
@@ -69,42 +70,47 @@ model VerificationToken {
 }
 
 model ProductRequest {
-  id             String    @id @default(cuid())
-  title          String
-  category       String
-  upvotes        Int
-  status         String
-  description    String
-  user           User      @relation(fields: [user_id], references: [id])
-  user_id        String
-  createdAt      DateTime  @default(now())
-  updatedAt      DateTime  @default(now()) @updatedAt
-  comments_count Int?      @default(0)
-  Comment        Comment[]
-  Upvotes        Upvotes[]
+  id          String    @id @default(cuid())
+  title       String
+  category    String
+  upvotes     Int       @default(0)
+  status      String
+  description String
+  user        User      @relation(fields: [user_id], references: [id])
+  user_id     String
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @default(now()) @updatedAt
+  Comment     Comment[]
+  Upvotes     Upvotes[]
 
   @@map("product_requests")
 }
 
 model Comment {
-  id                 Int             @id @default(autoincrement())
+  id                 String          @id @default(cuid())
   content            String
   user               User            @relation(fields: [user_id], references: [id])
   user_id            String
   product_request    ProductRequest? @relation(fields: [product_request_id], references: [id])
   product_request_id String
   replies            Reply[]
+  createdAt          DateTime        @default(now())
+  updatedAt          DateTime        @default(now()) @updatedAt
 
   @@map("comments")
 }
 
 model Reply {
-  id         Int     @id @default(autoincrement())
-  content    String
-  user       User    @relation(fields: [user_id], references: [id])
-  user_id    String
-  comment    Comment @relation(fields: [comment_id], references: [id])
-  comment_id Int
+  id              String   @id @default(cuid())
+  content         String
+  user            User     @relation(name: "UserReplying", fields: [user_id], references: [id])
+  user_id         String
+  comment         Comment  @relation(fields: [comment_id], references: [id])
+  comment_id      String
+  replied_to_user User     @relation(name: "RepliedToUser", fields: [replied_to], references: [id])
+  replied_to      String
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @default(now()) @updatedAt
 
   @@map("replies")
 }

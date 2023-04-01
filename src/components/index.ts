@@ -4,3 +4,7 @@ export * from "./SideBar";
 export * from "./DashBoardSuggestions";
 export * from "./SuggestionsEmpty";
 export * from "./Button";
+export * from "./ProductCard";
+// export * from "./ProductCardSkeleton";
+export * from "./CommentSection";
+export * from "./CommentItem";

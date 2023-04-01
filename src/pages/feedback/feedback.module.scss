@@ -1,0 +1,16 @@
+$block: "product_feedback";
+
+.#{$block} {
+  &__container {
+    nav {
+      @apply flex px-6 justify-between w-full my-6 h-10 items-center;
+    }
+    section {
+      @apply flex flex-col items-center justify-center w-full;
+    }
+  }
+
+  &_comment__container {
+    @apply flex flex-col items-center justify-center bg-off-white mt-6;
+  }
+}

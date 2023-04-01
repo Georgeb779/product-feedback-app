@@ -27,6 +27,7 @@ export const UpVote = (
     onSuccess: () => {
       toast.dismiss(title);
       queryClient.invalidateQueries("Get Suggestions");
+      queryClient.invalidateQueries(["Product", productId]);
       toast("Voted successfully", {
         type: "success",
         toastId: `${title}-success`

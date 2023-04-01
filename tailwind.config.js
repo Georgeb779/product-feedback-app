@@ -20,7 +20,8 @@ module.exports = {
         "sky-blue": "#AD1FEA",
         "steel-blue": "#647196",
         "bright-blue": "#62bcfa",
-        "dark-blue": "#3a4374"
+        "dark-blue": "#3a4374",
+        "shade-blue":'#8C92B3',
       }
     }
   },

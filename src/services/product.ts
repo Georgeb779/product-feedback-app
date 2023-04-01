@@ -5,6 +5,11 @@ export class Product {
 
   getProducts = async () => {
     const { data } = await axios.get("/api/products");
+    return  data;
+  };
+
+  getProductById = async (id: any) => {
+    const { data } = await axios.get(`/api/products/${id}`);
     return data;
   };
 

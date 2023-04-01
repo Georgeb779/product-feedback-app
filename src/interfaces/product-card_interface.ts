@@ -4,5 +4,6 @@ export interface ProductCardInterface {
   description: string;
   category: string;
   upVotes: number;
-  commentsCount: number;
+  comments: any[];
+  urlIsActive?: boolean;
 }

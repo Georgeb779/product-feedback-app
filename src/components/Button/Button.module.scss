@@ -4,4 +4,10 @@ $block: "btn";
   &.primary {
     @apply flex items-center justify-center w-[134px] h-[40px] text-white rounded-[10px] bg-sky-blue text-xs font-bold;
   }
+  &.back {
+    @apply gap-3 flex justify-center items-center text-steel-blue text-[13px] font-bold h-fit leading-[14px];
+  }
+  &.edit {
+    @apply flex items-center justify-center w-[119px] h-[40px] text-white rounded-[10px] bg-primary-blue text-xs font-bold;
+  }
 }

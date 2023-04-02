@@ -1,6 +1,6 @@
 import { Comments } from "@/services";
 import { countCommentAndReplies } from "@/utils";
-import React, { useEffect } from "react";
+import React from "react";
 import { useQuery } from "react-query";
 import { CommentItem } from "../CommentItem";
 import style from "./CommentSection.module.scss";

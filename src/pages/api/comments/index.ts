@@ -12,16 +12,21 @@ export default async function handler(
       const comments = products.filter(
         (comment) => comment.product_request_id === req.query.productId
       );
-      res.status(200).json(comments);
+      return res.status(200).json(comments);
     }
   }
 
   if (req.method === "POST") {
+    const { content, user_id, product_request_id } = req.body;
     const comment = await prisma.comment.create({
-      data: req.body
+      data: {
+        content,
+        user_id,
+        product_request_id
+      }
     });
-    res.status(201).json(comment);
+    return res.status(201).json(comment);
   }
 
-  res.status(405).end();
+  return res.status(405).end();
 }

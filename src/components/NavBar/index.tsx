@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { useQuery, useQueryClient } from "react-query";
+import React, { useState } from "react";
+import { useQuery } from "react-query";
 import { Product } from "@/services";
 import { BurgerMenu } from "@/assets/icons";
 

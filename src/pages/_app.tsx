@@ -1,7 +1,7 @@
 import "@/styles/globals.scss";
 import type { AppProps } from "next/app";
 import { SessionProvider, signIn, useSession } from "next-auth/react";
-import React, { ReactNode } from "react";
+import React, { ReactNode, useEffect } from "react";
 import { Session } from "next-auth";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
@@ -42,7 +42,7 @@ interface AuthProps {
 function Auth({ children }: AuthProps) {
   const { data: session, status } = useSession();
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (status === "unauthenticated") {
       signIn();
     }

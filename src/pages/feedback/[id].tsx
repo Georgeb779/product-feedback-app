@@ -27,8 +27,6 @@ function ProductPage() {
     return <>An error has occurred: {error}</>;
   }
 
-  console.log(data);
-
   return (
     <main className={style.product_feedback__container}>
       <header>
@@ -60,7 +58,7 @@ function ProductPage() {
       </section>
       <div className={style.product_feedback_comment__container}>
         <CommentSection id={data.id} />
-        <AddComment />
+        <AddComment productId={data.id} />
       </div>
     </main>
   );

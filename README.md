@@ -1,38 +1,121 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Web App - Product Feedback App
 
-## Getting Started
+This project is a solution to the Frontend Mentor's Product Feedback App coding challenge. It's a full-stack application built using Next.js, React, Prisma, and other dependencies listed in the `package.json` file.
 
-First, run the development server:
+## 🧐 What's inside?
+
+- ⚡️ [Next.js 13](https://nextjs.org/) - The React Framework for Production
+- ⚛️ [React 18](https://reactjs.org/) - A JavaScript library for building user interfaces
+- 🧱 [React-Query](https://react-query.tanstack.com/) - A data-fetching library for React
+- 🚀 [Next-Auth](https://next-auth.js.org/) - Authentication and authorization for Next.js
+- 🍪 [Prisma](https://www.prisma.io/) - A next-generation ORM for Node.js and TypeScript
+- 🌐 [Axios](https://axios-http.com/) - Promise based HTTP client for the browser and node.js
+- 🔐 [Bcrypt](https://github.com/kelektiv/node.bcrypt.js) - A library to help you hash passwords
+- 🌈 [React-Toastify](https://github.com/fkhadra/react-toastify) - React notifications made easy
+- 🎨 [Sass](https://sass-lang.com/) - Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.
+- 📏 [ESLint](https://eslint.org/) — Find and fix problems in your JavaScript code.
+- 🦋 [Prettier](https://prettier.io/) — An opinionated code formatter.
+- 🧪 [Jest](https://jestjs.io/) - A delightful JavaScript testing framework
+- 🐶 [Testing Library](https://testing-library.com/) - Simple and complete testing utilities that encourage good testing practices
+
+## Features
+
+- Responsive design for optimal layout on various screen sizes
+- Create, read, update, and delete product feedback requests
+- Form validation for creating and editing feedback requests
+- Sort suggestions by most/least upvotes and most/least comments
+- Filter suggestions by category
+- Add comments and replies to a product feedback request
+- Upvote product feedback requests
+
+## Installation
+
+1. Clone this repository:
+
+```bash
+git clone https://github.com/Georgeb779/product-feedback-app
+```
+
+2. Change into the project directory:
+
+```bash
+cd web-app
+```
+
+3. Install the required dependencies:
+
+```bash
+npm install
+```
+
+## Environment Setup and Database Configuration
+
+1. Create a .env file in the root directory of your project and add your database connection string:
+
+```bash
+DATABASE_URL="your_database_connection_string_here"
+```
+
+2. Run the Prisma migration to create the database schema:
+
+```bash
+npx prisma migrate dev
+```
+
+3. Generate Prisma Client based on your schema:
+
+```bash
+npx prisma generate
+```
+
+## Development
+
+To run the development server, run:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The application will be available at http://localhost:3000.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Building for Production
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+To create a production build, run:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```bash
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+To start the production server, run:
 
-## Learn More
+```bash
+npm run start
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Testing
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To run tests in watch mode, use:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```bash
+npm run test
+```
 
-## Deploy on Vercel
+To run tests in continuous integration mode, use:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm run test:ci
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Linting
+
+To check for linting issues, run:
+
+```bash
+npm run lint
+```
+
+## License
+
+This project is open-source and available under the MIT License.
+
+Save the above content in a `README.md` file in the root directory of your project.

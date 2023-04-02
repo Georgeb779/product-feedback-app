@@ -5,6 +5,7 @@ This project is a solution to the Frontend Mentor's Product Feedback App coding 
 ## 🧐 What's inside?
 
 - ⚡️ [Next.js 13](https://nextjs.org/) - The React Framework for Production
+- 🧁 [TailwindCSS v3](https://tailwindcss.com/) - A utility-first CSS framework packed with classes
 - ⚛️ [React 18](https://reactjs.org/) - A JavaScript library for building user interfaces
 - 🧱 [React-Query](https://react-query.tanstack.com/) - A data-fetching library for React
 - 🚀 [Next-Auth](https://next-auth.js.org/) - Authentication and authorization for Next.js

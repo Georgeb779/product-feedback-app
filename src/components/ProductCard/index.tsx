@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import style from "./ProductCard.module.scss";
 import { useSession } from "next-auth/react";
 import { Arrow, CommentIcon } from "@/assets/icons";
-import { UpVote } from "@/utils/upVote";
 import { ProductCardInterface } from "@/interfaces";
 import Link from "next/link";
 import { countCommentAndReplies } from "@/utils";
+import { useUpVote } from "@/hooks/useUpVote";
 
 export const ProductCard = ({
   id,
@@ -18,9 +18,11 @@ export const ProductCard = ({
 }: ProductCardInterface) => {
   const { data: session } = useSession();
 
-  const [disableVote, setDisableVote] = useState(false);
-
-  const mutation = UpVote(session?.user?.id, id, title, setDisableVote);
+  const { mutate, disableVote } = useUpVote({
+    userId: session?.user?.id,
+    productId: id,
+    title
+  });
 
   return (
     <div
@@ -41,7 +43,7 @@ export const ProductCard = ({
           className={style.product_card_vote__container}
           onClick={() => {
             if (disableVote) return;
-            mutation.mutate();
+            mutate();
           }}
         >
           <i>
